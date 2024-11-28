@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Predicción</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Formulario de Predicción</h1>
+    </header>
+    <main>
+        <form action="/upload_model/" method="post" enctype="multipart/form-data">
+            <label for="model_file">Subir Modelo:</label>
+            <input type="file" name="model_file" id="model_file" required>
+            <button type="submit">Cargar Modelo</button>
+        </form>
+        <form action="/predict/" method="post">
+            <label for="data">Datos para la Predicción (separados por coma):</label>
+            <input type="text" name="data" id="data" placeholder="Ej: 1.2,3.4,5.6" required>
+            <button type="submit">Hacer Predicción</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 - Sistema de Predicción</p>
+    </footer>
+</body>
+</html>
