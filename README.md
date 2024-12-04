@@ -2,7 +2,7 @@
 Este proyecto implementa un modelo de Machine Learning para clasificar clientes en tres categorías: `low_value`, `medium_value`, y `high_value`.
 
 ## Estructura del Repositorio
-- `notebook.ipynb`: Notebook con exploración, preprocesamiento y entrenamiento.
+- `Notebook-Final-Lab.ipynb`: Notebook con exploración, preprocesamiento y entrenamiento.
 - `fastapi.py`: Código de la API desarrollada con FastAPI.
 - `lambda_function.txt`: Código para la función Lambda en AWS.
 - `DOCUMENTACION PROYECTO MINERIA_VERSION I.docx`: Documentación del proyecto, URL de la API y ejemplo del POST.
