@@ -8,7 +8,7 @@ Este proyecto implementa un modelo de Machine Learning para clasificar clientes 
 - `DOCUMENTACION PROYECTO MINERIA_VERSION I.docx`: Documentación del proyecto, URL de la API y ejemplo del POST.
 
 ## Cómo Probar la API
-1. Enviar un POST al endpoint especificado en `info.txt` con el cuerpo JSON.
+1. Enviar un POST al endpoint especificado en `DOCUMENTACION PROYECTO MINERIA_VERSION I.docx` con el cuerpo JSON.
 2. Validar la respuesta según el ejemplo.
 
 ## Despliegue
