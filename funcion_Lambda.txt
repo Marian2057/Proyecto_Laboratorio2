@@ -1,0 +1,57 @@
+import os
+import boto3
+import json
+
+# Grabar las variables de entorno
+ENDPOINT_NAME = os.environ['ENDPOINT_NAME']
+runtime = boto3.client('runtime.sagemaker')
+
+def lambda_handler(event, context):
+    print("Received event: " + json.dumps(event, indent=2))
+    
+    try:
+        payload = event['data']  # Obtiene los datos del evento
+        print("Payload:", payload)
+
+        # Asegúrate de que el payload tenga el formato correcto
+        formatted_payload = ','.join(str(float(x)) for x in payload.split(','))
+        print("Formatted Payload:", formatted_payload)
+
+        # Invocar el endpoint de SageMaker
+        response = runtime.invoke_endpoint(
+            EndpointName=ENDPOINT_NAME,
+            ContentType='text/csv',
+            Body=formatted_payload
+        )
+        
+        print("Response from SageMaker:", response)
+        result = json.loads(response['Body'].read().decode())
+        print("Decoded result:", result)
+
+        # Verifica si result es un número (float)
+        if isinstance(result, float):
+            predicted_label_index = result
+        else:
+            predicted_label_index = result.get('predictions', [{}])[0].get('predicted_label', None)
+        
+        # Asumiendo que el modelo devuelve 0, 1 o 2 para las clases
+        predicted_label = {
+            0: "low_value",
+            1: "medium_value",
+            2: "high_value"
+        }.get(int(predicted_label_index), "unknown")  # Usa "unknown" para valores no esperados
+
+        print(f"Predicted label: {predicted_label}")
+        
+        # Devolver la etiqueta de clasificación 
+        return { 
+            'statusCode': 200, 
+            'body': json.dumps({'predicted_label': predicted_label}) 
+        }
+        
+    except Exception as e:
+        print(f"Error processing request: {str(e)}")
+        return {
+            'statusCode': 500,
+            'body': json.dumps({'error': str(e)})
+        }
