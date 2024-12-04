@@ -3,6 +3,7 @@ Este proyecto implementa un modelo de Machine Learning para clasificar clientes 
 
 ## Estructura del Repositorio
 - `Notebook-Final-Lab.ipynb`: Notebook con exploración, preprocesamiento y entrenamiento.
+- `xgboost-model`: archivo xgboost del modelo entrenado.
 - `fastapi.py`: Código de la API desarrollada con FastAPI.
 - `lambda_function.txt`: Código para la función Lambda en AWS.
 - `DOCUMENTACION PROYECTO MINERIA_VERSION I.docx`: Documentación del proyecto, URL de la API y ejemplo del POST.
