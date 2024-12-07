@@ -6,7 +6,7 @@ Este proyecto implementa un modelo de Machine Learning para clasificar clientes 
 - `xgboost-model`: archivo xgboost del modelo entrenado.
 - `fastapi.py`: Código de la API desarrollada con FastAPI.
 - `lambda_function.txt`: Código para la función Lambda en AWS.
-- `DOCUMENTACION PROYECTO MINERIA_VERSION I.docx`: Documentación del proyecto, URL de la API y ejemplo del POST.
+- `DOCUMENTACION PROYECTO MINERIA_VERSION I.docx`: Documentación del proyecto, URL de la API, ejemplo del POST y por ultimo capturas del dashboard de monitoreo.
 
 ## Cómo Probar la API
 1. Enviar un POST al endpoint especificado en `DOCUMENTACION PROYECTO MINERIA_VERSION I.docx` con el cuerpo JSON.
