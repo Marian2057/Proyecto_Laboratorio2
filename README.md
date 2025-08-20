@@ -36,11 +36,7 @@ El objetivo es ayudar a identificar clientes según su valor potencial y mejorar
 
 1. Enviar un **POST** al endpoint especificado en la documentación:  
    ```json
-   {
-     "feature1": 12.5,
-     "feature2": 4.7,
-     "feature3": 9.1
-   }
+   {"data": [0.812959, 0, -0.560700, 1.701895, -1.478080, -0.121517, 0.125643, 0, 0.489832, 0.340994]}
 Validar la respuesta según el ejemplo:
 
 json
@@ -66,16 +62,4 @@ Mejora en la segmentación y toma de decisiones de negocio.
 
 Infraestructura escalable y serverless en AWS.
 
-🖼️ Ejemplo de Flujo
-mermaid
-Copy
-Edit
-flowchart TD
-    A[Cliente] -->|Request POST| B[API FastAPI]
-    B --> C[AWS Lambda]
-    C --> D[SageMaker Modelo XGBoost]
-    D --> C
-    C --> B
-    B -->|Respuesta JSON| A
-👩‍💻 Autores
-Marianela Pi – Ciencia de Datos, Machine Learning & APIs
+Ciencia de Datos, Machine Learning & APIs
